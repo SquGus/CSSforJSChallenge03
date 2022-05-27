@@ -1,4 +1,4 @@
-# Component Library Workshop
+# Component Library
 
 In this challenge, we'll build 3 components from scratch:
 

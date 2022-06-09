@@ -6,13 +6,16 @@ import styled from 'styled-components';
 
 const SIZES = {
   small:{
-    height: 8
+    height: 8,
+    padding: '0px'
   },
   medium:{
-    height: 12
+    height: 12,
+    padding: '0px'
   },
   large:{
-    height: 16    
+    height: 24,
+    padding: '4px'
   }
 }
 
@@ -30,6 +33,7 @@ const ProgressBar = ({ value, size }) => {
 const WrapperBar = styled.div`
   width: 100%;
   height: ${p => p.currentSize.height}px;
+  padding: ${p => p.currentSize.padding};
   background: ${COLORS.transparentGray15};
   box-shadow: inset 0px 2px 4px rgba(128, 128, 128, 0.35);
   border-radius: 4px;

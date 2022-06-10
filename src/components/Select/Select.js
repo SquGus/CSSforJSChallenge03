@@ -34,6 +34,8 @@ const IconWrapper = styled.div`
   right: 10px;
   height: 24px;
   margin: auto;
+  /* Allows select element to be clicked by making the icon avoid the clicks*/
+  pointer-events: none;
 `;
 
 const NativeSelect = styled.select`

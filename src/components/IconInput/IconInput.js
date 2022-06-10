@@ -8,12 +8,14 @@ const SIZES = {
   large: {
     iconSize: 24,
     fontSize: 18/16,
-    borderSize: 2
+    borderSize: 2,
+    padding: 36
   },
   small: {
     iconSize: 16,
     fontSize: 14/16,
-    borderSize: 1
+    borderSize: 1,
+    padding: 24
   }
 }
 
@@ -30,7 +32,7 @@ const IconInput = ({
   return (
   <Wrapper style={{ '--width': width + 'px'}}>
     <NativeInput placeholder={placeholder} size={currSize}></NativeInput>
-    <IconWrapper>
+    <IconWrapper style={{ '--height': currSize.iconSize + 'px'}}>
       <Icon id={icon} size={currSize.iconSize}></Icon>      
     </IconWrapper>
   </Wrapper>);
@@ -42,7 +44,7 @@ const NativeInput = styled.input`
   font-size: ${p=>p.size.fontSize}rem;
   padding-top: 8px;
   padding-bottom: 4px;
-  padding-left: 34px;
+  padding-left: ${p=>p.size.padding}px;
   border-bottom: ${p=>p.size.borderSize}px solid ${COLORS.black};
   color: inherit;
   font-weight: 700;
@@ -63,8 +65,10 @@ const NativeInput = styled.input`
 
 const IconWrapper = styled.div`
   position: absolute;
-  top: 4px;
-  left: 4px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: var(--height);
   pointer-events: none;
 
   ${NativeInput}:hover + & {

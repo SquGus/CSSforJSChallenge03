@@ -13,7 +13,10 @@ const Select = ({ label, value, onChange, children }) => {
         {children}
       </NativeSelect>
       <PresentationSelect >
-        hello world
+        {displayedValue}
+        <IconWrapper>
+          <Icon id='chevron-down'></Icon>
+        </IconWrapper>
       </PresentationSelect>
     </Wrapper>
   );
@@ -22,6 +25,15 @@ const Select = ({ label, value, onChange, children }) => {
 const Wrapper = styled.div`
   position: relative;
   width: max-content;
+`;
+
+const IconWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  height: 24px;
+  margin: auto;
 `;
 
 const NativeSelect = styled.select`
@@ -40,16 +52,15 @@ const PresentationSelect = styled.div`
   /* Select Container */
   background-color: ${COLORS.transparentGray15};
   padding: 12px 16px;
+  padding-right: 52px;
   border-radius: 8px;
-
-
 
   ${NativeSelect}:hover + & {
     color: ${COLORS.black};
   }
 
   ${NativeSelect}:focus + & {
-    outline: 4px solid ${COLORS.black};
+    outline: 2px solid ${COLORS.black};
   }
 `;
 

@@ -38,6 +38,7 @@ const NativeInput = styled.input`
   padding-bottom: 4px;
   border-bottom: 2px solid ${COLORS.black};
   color: inherit;
+  font-weight: 700;
 
   &:focus {
     outline-offset: 2px;
@@ -45,6 +46,11 @@ const NativeInput = styled.input`
 
   &:hover {
     color: ${COLORS.black};
+  }
+
+  &::placeholder {
+    color: ${COLORS.gray500};
+    font-weight: 400;
   }
 `;
 

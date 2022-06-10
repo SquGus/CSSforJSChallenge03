@@ -27,15 +27,12 @@ const Wrapper = styled.div`
 const NativeSelect = styled.select`
   opacity: 0;
   position: absolute;
+  top: 0;
+  right: 0;
   width: 100%;
   height: 100%;
 `;
 const PresentationSelect = styled.div`
-/* change:
-- hover
-- focus
-** padding right with the arrow for selector does not move
-*/
   /*Text styles*/
   font-weight: 400;
   font-size: (16 / 16) rem;
@@ -45,10 +42,15 @@ const PresentationSelect = styled.div`
   padding: 12px 16px;
   border-radius: 8px;
 
+
+
   ${NativeSelect}:hover + & {
     color: ${COLORS.black};
   }
 
+  ${NativeSelect}:focus + & {
+    outline: 4px solid ${COLORS.black};
+  }
 `;
 
 export default Select;

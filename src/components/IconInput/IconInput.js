@@ -6,7 +6,14 @@ import styled from 'styled-components';
 
 const SIZES = {
   large: {
-    iconSize: 24
+    iconSize: 24,
+    fontSize: 18/16,
+    borderSize: 2
+  },
+  small: {
+    iconSize: 16,
+    fontSize: 14/16,
+    borderSize: 1
   }
 }
 
@@ -22,7 +29,7 @@ const IconInput = ({
   
   return (
   <Wrapper style={{ '--width': width + 'px'}}>
-    <NativeInput placeholder={placeholder}></NativeInput>
+    <NativeInput placeholder={placeholder} size={currSize}></NativeInput>
     <IconWrapper>
       <Icon id={icon} size={currSize.iconSize}></Icon>      
     </IconWrapper>
@@ -32,11 +39,11 @@ const IconInput = ({
 const NativeInput = styled.input`
   border: none;
   width: 100%;
-  height: (18/16) rem;
-  padding-left: 34px;
+  font-size: ${p=>p.size.fontSize}rem;
   padding-top: 8px;
   padding-bottom: 4px;
-  border-bottom: 2px solid ${COLORS.black};
+  padding-left: 34px;
+  border-bottom: ${p=>p.size.borderSize}px solid ${COLORS.black};
   color: inherit;
   font-weight: 700;
 

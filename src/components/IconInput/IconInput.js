@@ -22,35 +22,46 @@ const IconInput = ({
   
   return (
   <Wrapper>
+    <NativeInput placeholder={placeholder}></NativeInput>
     <IconWrapper>
       <Icon id={icon} size={currSize.iconSize}></Icon>      
     </IconWrapper>
-    <NativeInput placeholder={placeholder}></NativeInput>
   </Wrapper>);
 };
 
 const NativeInput = styled.input`
   border: none;
-  padding-left: 40px;
   width: 100%;
-  border: none;
+  height: (18/16) rem;
+  padding-left: 34px;
+  padding-top: 8px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid ${COLORS.black};
+  color: inherit;
 
   &:focus {
-    border: none;
-    outline: none;
+    outline-offset: 2px;
+  }
+
+  &:hover {
+    color: ${COLORS.black};
   }
 `;
 
 const IconWrapper = styled.div`
   position: absolute;
+  top: 4px;
+  left: 4px;
+  pointer-events: none;
+
+  ${NativeInput}:hover + & {
+    color: ${COLORS.black};
+  } 
 `;
 
 const Wrapper = styled.div`
-  border-bottom: 2px solid ${COLORS.black};
-  padding-bottom: 8px;
   color: ${COLORS.gray700};
-  
- 
+  position: relative;
 `;
 
 export default IconInput;

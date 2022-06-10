@@ -21,7 +21,7 @@ const IconInput = ({
   const currSize = SIZES[size]
   
   return (
-  <Wrapper>
+  <Wrapper style={{ '--width': width + 'px'}}>
     <NativeInput placeholder={placeholder}></NativeInput>
     <IconWrapper>
       <Icon id={icon} size={currSize.iconSize}></Icon>      
@@ -62,6 +62,7 @@ const IconWrapper = styled.div`
 const Wrapper = styled.div`
   color: ${COLORS.gray700};
   position: relative;
+  width: var(--width);
 `;
 
 export default IconInput;
